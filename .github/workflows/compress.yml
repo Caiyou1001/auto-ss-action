@@ -8,7 +8,7 @@ on:
 jobs:
   compress:
     runs-on: ubuntu-latest
-    if: github.repository == 'yanglbme/cordcloud-action'
+    if: github.repository == 'Caiyou1001/cordcloud-action'
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v2
