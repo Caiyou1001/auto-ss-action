@@ -1,4 +1,4 @@
-name: Compress
+name: action
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
 jobs:
   compress:
     runs-on: ubuntu-latest
-    if: github.repository == 'Caiyou1001/cordcloud-action'
+    if: github.repository == 'yanglbme/cordcloud-action'
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v2
