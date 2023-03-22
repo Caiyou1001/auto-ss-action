@@ -1,35 +1,15 @@
-name: Compress
+name: CordCloud
 
 on:
   schedule:
-    - cron: "0 0 * * 3"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
-  compress:
+  checkin:
     runs-on: ubuntu-latest
-    if: github.repository == 'Caiyou1001/cordcloud-action'
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@v2
-
-      - name: Compress Images
-        id: calibre
-        uses: calibreapp/image-actions@main
+      - uses: yanglbme/cordcloud-action@main
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          compressOnly: true
-
-      - name: Commit Files
-        if: |
-          steps.calibre.outputs.markdown != ''
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "chore: auto compress images" -a
-      - name: Push Changes
-        if: |
-          steps.calibre.outputs.markdown != ''
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          email: ${{ secrets.CC_EMAIL }}
+          passwd: ${{ secrets.CC_PASSWD }}
