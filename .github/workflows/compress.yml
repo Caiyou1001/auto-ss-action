@@ -7,7 +7,7 @@ on:
 
 jobs:
   checkin:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: Caiyou1001/cordcloud-action@main
         with:
