@@ -1,4 +1,4 @@
-name: CordCloud
+name: action
 
 on:
   schedule:
