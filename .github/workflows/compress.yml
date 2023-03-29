@@ -2,12 +2,12 @@ name: action
 
 on:
   schedule:
-    - cron: "0 9-18 * * *"
+    - cron: "0 9-10 * * *"
   workflow_dispatch:
 
 jobs:
   checkin:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: Caiyou1001/cordcloud-action@main
         with:
